@@ -16,8 +16,9 @@ class StudentViewHolder(parent: ViewGroup) : androidx.recyclerview.widget.Recycl
      * Items might be null if they are not paged in yet. PagedListAdapter will re-bind the
      * ViewHolder when Item is loaded.
      */
-    fun bindTo(student: Student?) {
-        this.student = student
-        nameView.text = student?.name
+    fun bindTo(name :String?) {
+//        this.student = student
+//        nameView.text = student?.name
+        nameView.text = name
     }
 }

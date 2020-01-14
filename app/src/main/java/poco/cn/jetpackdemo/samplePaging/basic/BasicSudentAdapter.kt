@@ -15,7 +15,7 @@ class BasicSudentAdapter : PagedListAdapter<Student, StudentViewHolder>(diffCall
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        holder.bindTo(getItem(position))
+        holder.bindTo(getItem(position)?.name)
     }
 
     companion object {

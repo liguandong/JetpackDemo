@@ -23,4 +23,22 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="为列表添加Header" />
+
+	<Button
+		android:id="@+id/mBtnAudio"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="音乐paging" />
+
+	<Button
+		android:id="@+id/mBtnLifecycle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="lifecycle" />
+		<Button
+		android:id="@+id/mBtnLifeData"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="lifeData" />
+
 </LinearLayout>

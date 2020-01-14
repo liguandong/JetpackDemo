@@ -2,4 +2,5 @@
     <string name="app_name">JetpackDemo</string>
     <string name="title_activity_basic_usage">BasicUsageActivity</string>
     <string name="title_activity_header_proxy">HeaderProxyActivity</string>
+    <string name="title_activity_audio_paging">AudioPagingActivity</string>
 </resources>

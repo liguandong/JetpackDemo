@@ -1,10 +1,10 @@
-package poco.cn.jetpackdemo.samplePaging.proxy
+package poco.cn.jetpackdemo.audioPaging.proxy
 
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import poco.cn.jetpackdemo.samplePaging.db.Student
+import poco.cn.jetpackdemo.audioPaging.AudioInfo
 import poco.cn.jetpackdemo.samplePaging.viewholder.FooterViewHolder
 import poco.cn.jetpackdemo.samplePaging.viewholder.HeaderViewHolder
 import poco.cn.jetpackdemo.samplePaging.viewholder.StudentViewHolder
@@ -12,7 +12,7 @@ import poco.cn.jetpackdemo.samplePaging.viewholder.StudentViewHolder
 /**
  * Created by lgd on 2020/1/2.
  */
-class HeaderProxyAdapter : PagedListAdapter<Student, RecyclerView.ViewHolder>(diffCallback) {
+class HeaderProxyAdapter : PagedListAdapter<AudioInfo, RecyclerView.ViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -26,7 +26,7 @@ class HeaderProxyAdapter : PagedListAdapter<Student, RecyclerView.ViewHolder>(di
         when(holder){
             is HeaderViewHolder -> holder.bindsHeader()
             is FooterViewHolder -> holder.bindsFooter()
-            is StudentViewHolder -> holder.bindTo(getStudentItem(position)?.name)
+            is StudentViewHolder -> holder.bindTo(getStudentItem(position)?.title)
         }
     }
 
@@ -39,7 +39,7 @@ class HeaderProxyAdapter : PagedListAdapter<Student, RecyclerView.ViewHolder>(di
     }
 
 
-    private fun getStudentItem(position: Int): Student? {
+    private fun getStudentItem(position: Int): AudioInfo? {
         return getItem(position - 1)
     }
 
@@ -55,13 +55,13 @@ class HeaderProxyAdapter : PagedListAdapter<Student, RecyclerView.ViewHolder>(di
 
 
     companion object{
-        private val diffCallback = object : DiffUtil.ItemCallback<Student>(){
-            override fun areItemsTheSame(oldItem: Student, newItem: Student): Boolean {
+        private val diffCallback = object : DiffUtil.ItemCallback<AudioInfo>(){
+            override fun areItemsTheSame(oldItem: AudioInfo, newItem: AudioInfo): Boolean {
                 return newItem.id == oldItem.id
             }
 
 
-            override fun areContentsTheSame(oldItem: Student, newItem: Student): Boolean {
+            override fun areContentsTheSame(oldItem: AudioInfo, newItem: AudioInfo): Boolean {
                 return oldItem == newItem
             }
         }
