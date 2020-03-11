@@ -17,7 +17,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
  * 并且这种失效会自动传播到其他进程中的 AppDatabase 实例。
  */
 //@Database(entities = arrayOf(Student::class),version =  1)
-@Database(entities = [Student::class], version = 1)
+@Database(entities = [Student::class], version = 1 ,exportSchema = false)
 abstract class StudentDb : RoomDatabase() {
     abstract fun studentDao(): StudentDao
 
